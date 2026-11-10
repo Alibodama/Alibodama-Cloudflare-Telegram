@@ -1,0 +1,18 @@
+# ==================================================================
+#  Alibodama — Telegram WEB Proxy | Cloudflare WORKER configuration
+#  CLI deploy:   npx wrangler deploy
+# ==================================================================
+
+name = "alibodama"
+main = "worker.js"
+compatibility_date = "2025-01-01"
+
+[vars]
+# Max concurrent streams per WebSocket session (4-100000)
+MAX_DIALS = "45"
+# Optional camouflage: browser visitors see this URL instead of the dashboard
+# CAMOUFLAGE_URL = "https://example.com"
+
+# PROXY_SECRET (the proxy password) is a SECRET, not a var:
+#     npx wrangler secret put PROXY_SECRET
+# It must be exactly 32 hex characters (optionally prefixed with "dd").
